@@ -17,7 +17,7 @@ return [
 
     'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
         '%s%s',
-        'arsil-backend-anzxy.sevalla.app,localhost,localhost:3000,127.0.0.1,127.0.0.1:8000,::1',
+        'rharaka.github.io/backendArsil,arsil-backend-anzxy.sevalla.app,localhost,localhost:3000,127.0.0.1,127.0.0.1:8000,::1',
         Sanctum::currentApplicationUrlWithPort()
     ))),
 
