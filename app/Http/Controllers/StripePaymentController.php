@@ -68,7 +68,7 @@ class StripePaymentController extends Controller
             ]],
             'mode' => 'payment',
             'ui_mode' => 'embedded',
-            'return_url' => 'http://localhost:8080/#/checkout-return/{CHECKOUT_SESSION_ID}/'.$orderNumber.'/'.$userId,
+            'return_url' => 'https://backendarsil-09sxs.sevalla.page/#/checkout-return/{CHECKOUT_SESSION_ID}/'.$orderNumber.'/'.$userId,
         ]);
 
         echo json_encode(array('checkout_session' => $checkout_session));
