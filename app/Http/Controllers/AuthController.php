@@ -81,22 +81,22 @@ class AuthController extends Controller
         }
     }
     public function login(Request $request) {
-        // echo "<p>$request</p>";
-        $request->validate([
-            'email' => 'required|string|email|max:100',
-            'password' => 'required|string|min:6'
-        ]);
-        if(!Auth::attempt($request->only('email', 'password'))) {
-            return response()->json(['message' => 'Email or/and Password is incorect!'], 401);
-        }
+        echo "<p>$request</p>";
+        // $request->validate([
+            // 'email' => 'required|string|email|max:100',
+            // 'password' => 'required|string|min:6'
+        // ]);
+        // if(!Auth::attempt($request->only('email', 'password'))) {
+            // return response()->json(['message' => 'Email or/and Password is incorect!'], 401);
+        // }
 
-        $user = $request->user();
-        $token = $user->createToken('authToken')->plainTextToken;
-        // $token->expires_at = now()->addMinutes(1);
-        // $token->save();
-        DB::table('personal_access_tokens')->where('tokenable_id', $user->id)
+        // $user = $request->user();
+        // $token = $user->createToken('authToken')->plainTextToken;
+        // // $token->expires_at = now()->addMinutes(1);
+        // // $token->save();
+        // DB::table('personal_access_tokens')->where('tokenable_id', $user->id)
             ->update(['expires_at' => now()->addMinutes(60)]);
-        return response()->json(['user' => $user, 'token' => $token]);
+        // return response()->json(['user' => $user, 'token' => $token]);
     }
     public function logout(Request $request) {
         $request->user()->tokens()->delete();
