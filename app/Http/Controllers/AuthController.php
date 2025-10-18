@@ -95,7 +95,7 @@ class AuthController extends Controller
         // // $token->expires_at = now()->addMinutes(1);
         // // $token->save();
         // DB::table('personal_access_tokens')->where('tokenable_id', $user->id)
-            ->update(['expires_at' => now()->addMinutes(60)]);
+        //    ->update(['expires_at' => now()->addMinutes(60)]);
         // return response()->json(['user' => $user, 'token' => $token]);
     }
     public function logout(Request $request) {
