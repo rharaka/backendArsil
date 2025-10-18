@@ -81,7 +81,7 @@ class AuthController extends Controller
         }
     }
     public function login(Request $request) {
-        return "<p>test login request</p>";
+        return "test login request";
         // $request->validate([
             // 'email' => 'required|string|email|max:100',
             // 'password' => 'required|string|min:6'
