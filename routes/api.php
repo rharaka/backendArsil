@@ -20,11 +20,11 @@ Route::post('/update-contacts', 'App\Http\Controllers\ShipmentController@updateS
 Route::post('/shipment-payed', 'App\Http\Controllers\ShipmentController@payedShipment');
 Route::post('/cites-by-code', 'App\Http\Controllers\ShipmentController@getCitiesByCode');
 
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/admin-register', [AuthController::class, 'adminRegister']);
-Route::post('/admin-login', [AuthController::class, 'adminLogin']);
-Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
+Route::post('/register', 'App\Http\Controllers\AuthController@register']);
+Route::post('/login', 'App\Http\Controllers\AuthController@login']);
+Route::post('/admin-register', 'App\Http\Controllers\AuthController@adminRegister']);
+Route::post('/admin-login', 'App\Http\Controllers\AuthController@adminLogin']);
+Route::middleware('auth:sanctum')->post('/logout', 'App\Http\Controllers\AuthController@logout']);
 Route::post('/logout-user', 'App\Http\Controllers\UserController@logout');
 Route::post('/get-user', 'App\Http\Controllers\UserController@getUser');
 
